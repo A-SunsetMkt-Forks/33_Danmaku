@@ -5,7 +5,7 @@
  * Copyright (c) 2015-2019 James Liu
  * Released under the MIT license
  */
-;(window => {
+; (window => {
   class Damoo {
     constructor(m, n, r, t) {
       this.canvas = new Canvas(m, n, r, t);
@@ -65,7 +65,7 @@
 
   function _preload(d, f) {
     let cvs = Damoo.dom.createElement('canvas'),
-        ctx = cvs.getContext('2d');
+      ctx = cvs.getContext('2d');
     ctx.font = f;
     cvs.width = ctx.measureText(d.text).width;
     cvs.height = f.size * 1.5;
@@ -85,26 +85,26 @@
   }
 
   const _RAF = window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        (cb => setTimeout(cb, 17));
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    (cb => setTimeout(cb, 17));
 
   const _CAF = window.cancelAnimationFrame ||
-        window.mozCancelAnimationFrame ||
-        window.webkitCancelAnimationFrame ||
-        window.webkitCancelRequestAnimationFrame ||
-        window.msCancelAnimationFrame ||
-        window.oCancelAnimationFrame ||
-        (id => clearTimeout(id));
+    window.mozCancelAnimationFrame ||
+    window.webkitCancelAnimationFrame ||
+    window.webkitCancelRequestAnimationFrame ||
+    window.msCancelAnimationFrame ||
+    window.oCancelAnimationFrame ||
+    (id => clearTimeout(id));
 
   function _render() {
     this.canvas.clear();
     for (let i = 0; i < this.thread.pool.length; i++) {
       let d = this.thread.get(i),
-          x = d.offset.x,
-          y = d.offset.y;
+        x = d.offset.x,
+        y = d.offset.y;
       this.canvas.draw(d, x, y);
       d.offset.x -= d.speed;
       if (x <= -d.canvas.width) {

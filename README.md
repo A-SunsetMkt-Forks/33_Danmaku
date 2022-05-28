@@ -1,2 +1,2 @@
-# Asoul_Danmaku
- A danmaku-display tool for asoul
+# 33_Danmaku
+ A danmaku-display tool for 33
