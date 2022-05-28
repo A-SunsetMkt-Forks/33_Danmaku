@@ -24,10 +24,10 @@ function gettxt() {
         console.log(msg);
       }
       rpool.set(id, msg);
-    }
-    // Delete older items in rpool if it's too big
-    if (rpool.size > 30) {
-      rpool.delete(rpool.keys().next().value);
+      // Delete older items in rpool if it's too big
+      if (rpool.size > 30) {
+        rpool.delete(rpool.keys().next().value);
+      }
     }
   })
 }
