@@ -1,25 +1,22 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-        </script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-    <body>
-        <div id="dm-screen"></div>
-        <div class="test_buttons">
-            <button onclick="st()">
-                开启弹幕
-            </button>
-            <button onclick="test()">
-                发射测试弹幕
-            </button>
-            <button onclick="sr()">
-                发射随机弹幕
-            </button>
-        </div>
-        <script type="text/javascript" src="damoo.js"></script>
-        <script type="text/javascript" src="main.js"></script>
-    </body>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/jquery@2.1.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="damoo.js"></script>
+</head>
+
+<body>
+    <div id="dm-screen"></div>
+    <div class="buttons" id="buttons">
+        <button onclick="st();document.getElementById('buttons').remove();">
+            开启弹幕
+        </button>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
 </html>
