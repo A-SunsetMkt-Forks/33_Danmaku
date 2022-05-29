@@ -1,6 +1,9 @@
 # 33_Danmaku
  A danmaku-display tool for 33
 
+## API源码
+https://github.com/lwd-temp/site-api/blob/main/api/33reply.php
+
 ## TODO
 * 根据`next`参数可控获取下一页内容
 * 可以一直获取下去，但是问题是，获取几页？
