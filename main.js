@@ -7,12 +7,13 @@ function shoot(t) {
     damoo.emit({ text: t, color: "black" });
 }
 
-function gettxt() {
+function gettxt(next) {
     axios({
         method: "GET",
-        url: url,
+        url: url + "?next=" + next,
     }).then(response => {
         rplys = response.data.data.replies;
+        // next = response.data.data.cursor.next;
         // Append each.rpid:each.content.message to rpool
         for (var i = 0; i < rplys.length; i++) {
             id = rplys[i].rpid;
@@ -21,10 +22,10 @@ function gettxt() {
                 // If the rply is not in rpool, shoot & save it
                 shoot(msg);
                 rpool.set(id, msg);
-                console.log(msg);
+                // console.log(msg);
             }
             // Delete older items in rpool if it's too big
-            if (rpool.size > 100) {
+            if (rpool.size > 200) {
                 rpool.delete(rpool.keys().next().value);
             }
         }
@@ -32,5 +33,5 @@ function gettxt() {
 }
 
 function st() {
-    window.setInterval("gettxt()", 1000);
+    window.setInterval("gettxt('0')", 1000);
 }
