@@ -7,6 +7,14 @@
     <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
     <script src="https://unpkg.com/jquery@2.1.4/dist/jquery.min.js"></script>
     <script type="text/javascript" src="damoo.js"></script>
+    <script data-cfasync="false">
+    ;(function () {
+        var src = '//unpkg.com/vconsole@latest/dist/vconsole.min.js';
+        if (!/vconsole=true/.test(window.location) && localStorage.getItem('active-vconsole') != 'true') return;
+        document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt>var vConsole = new window.VConsole();</scr' + 'ipt>');
+    })();
+    </script>
 </head>
 
 <body>
